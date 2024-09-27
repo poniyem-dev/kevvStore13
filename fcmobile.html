@@ -70,14 +70,23 @@
             <label for="id">ID FC Mobile:</label>
             <input type="text" id="id" name="id" placeholder="Masukkan ID FC Mobile" required><br>
 
-            <label for="fcpoint">FC Point:</label>
+            <label for="fcpoint">Pilihan Pembelian:</label>
             <select id="fcpoint" name="fcpoint">
-                <option value="">--Pilih FC Point--</option>
-                <option value="40 FC Point Rp. 10.000">40 FC Point Rp. 10.000</option>
-                <option value="100 FC Point Rp. 20.000">100 FC Point Rp. 20.000</option>
-                <option value="520 FC Point Rp. 80.000">520 FC Point Rp. 80.000</option>
-                <option value="1.070 FC Point Rp. 160.000">1.070 FC Point Rp. 160.000</option>
-                <option value="2.200 FC Point Rp. 325.000">2.200 FC Point Rp. 325.000</option>
+                <option value="">--Pilih Opsi Pembelian--</option>
+                <optgroup label="FC Point">
+                    <option value="40 FC Point Rp. 10.000">40 FC Point Rp. 10.000</option>
+                    <option value="100 FC Point Rp. 20.000">100 FC Point Rp. 20.000</option>
+                    <option value="520 FC Point Rp. 80.000">520 FC Point Rp. 80.000</option>
+                    <option value="1.070 FC Point Rp. 160.000">1.070 FC Point Rp. 160.000</option>
+                    <option value="2.200 FC Point Rp. 325.000">2.200 FC Point Rp. 325.000</option>
+                </optgroup>
+                <optgroup label="Silver">
+                    <option value="39 Silver Rp. 10.000">39 Silver Rp. 10.000</option>
+                    <option value="99 Silver Rp. 20.000">99 Silver Rp. 20.000</option>
+                    <option value="499 Silver Rp. 80.000">499 Silver Rp. 80.000</option>
+                    <option value="999 Silver Rp. 160.000">999 Silver Rp. 160.000</option>
+                    <option value="1.999 Silver Rp. 325.000">1.999 Silver Rp. 325.000</option>
+                </optgroup>
             </select><br>
 
             <button type="submit">Kirim</button>
@@ -91,7 +100,7 @@
             const fcpoint = document.getElementById('fcpoint').value;
 
             if (fcpoint === "") {
-                alert('Pilih jumlah FC Point!');
+                alert('Pilih opsi pembelian!');
                 return;
             }
 
