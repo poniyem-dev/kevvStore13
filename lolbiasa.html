@@ -56,12 +56,12 @@
             <label for="id">ID League of Legends:</label>
             <input type="text" id="id" name="id" required>
             
-            <label for="topup">Pilih Jumlah Diamond:</label>
+            <label for="topup">Pilih Jumlah RP:</label>
             <select id="topup" name="topup" required>
-                <option value="150" data-price="18000">150 RP - Rp. 18.000</option>
-                <option value="775" data-price="80000">775 RP - Rp. 80.000</option>
-                <option value="1400" data-price="137000">1.400 RP - Rp. 137.000</option>
-                <option value="2850" data-price="270000">2.850 RP - Rp. 270.000</option>
+                <option value="575" data-price="65000">575 RP - Rp. 65.000</option>
+                <option value="1380" data-price="145000">1.380 RP - Rp. 145.000</option>
+                <option value="2800" data-price="282000">2.800 RP - Rp. 282.000</option>
+                <option value="4500" data-price="440000">4.500 RP - Rp. 440.000</option>
             </select>
             
             <input type="submit" value="Kirim">
@@ -77,7 +77,7 @@
             const topupText = topupElement.options[topupElement.selectedIndex].text;
             const price = topupElement.options[topupElement.selectedIndex].getAttribute('data-price');
             
-            const message = `ID League of Legends: ${id}\nJumlah Diamond: ${topupText}\nHarga: Rp. ${price}`;
+            const message = `ID League of Legends: ${id}\nJumlah RP: ${topupText}\nHarga: Rp. ${price}`;
             const whatsappUrl = `https://wa.me/081538769551?text=${encodeURIComponent(message)}`;
             
             window.open(whatsappUrl, '_blank');
