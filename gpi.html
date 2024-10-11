@@ -55,13 +55,22 @@
         <h1>Form Pembelian Genshin Impact</h1>
         <form id="genshinForm">
             <label for="gameID">ID Game:</label>
-            <input type="text" id="gameID" name="gameID" required><br><br>
+            <input type="text" id="gameID" name="gameID" required>
+
+            <label for="server">Server:</label>
+            <select id="server" name="server" required>
+                <option value="">--Pilih Server--</option>
+                <option value="Asia">Asia</option>
+                <option value="America">America</option>
+                <option value="Europe">Europe</option>
+                <option value="TW_HK_MO">TW_HK_MO</option>
+            </select>
 
             <label for="membership">Membership (Opsional):</label>
             <select id="membership" name="membership">
                 <option value="">--Pilih Membership--</option>
                 <option value="Blessing of The Welkin Moon Rp. 95.000">Blessing of The Welkin Moon Rp. 95.000</option>
-            </select><br><br>
+            </select>
 
             <label for="diamond">Top-up Genesis Crystal (Opsional):</label>
             <select id="diamond" name="diamond">
@@ -71,7 +80,7 @@
                 <option value="1.090 GC Rp. 190.000">1.090 GC Rp. 190.000</option>
                 <option value="2.240 GC Rp. 400.000">2.240 GC Rp. 400.000</option>
                 <option value="3.880 GC Rp. 610.000">3.880 GC Rp. 610.000</option>
-            </select><br><br>
+            </select>
 
             <button type="submit">Kirim</button>
         </form>
@@ -81,10 +90,16 @@
         document.getElementById('genshinForm').addEventListener('submit', function(e) {
             e.preventDefault();
             const gameID = document.getElementById('gameID').value;
+            const server = document.getElementById('server').value;
             const membership = document.getElementById('membership').value;
             const diamond = document.getElementById('diamond').value;
 
-            let message = `ID Game: ${gameID}\n`;
+            if (!server) {
+                alert('Silakan pilih server!');
+                return;
+            }
+
+            let message = `ID Game: ${gameID}\nServer: ${server}\n`;
 
             if (membership !== "") {
                 message += `Membership: ${membership}`;
